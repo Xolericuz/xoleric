@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XOLERIC AI OS - The Future of Artificial Intelligence Operating System</title>
+    <meta name="description" content="XOLERIC - AI-native operating system with custom microkernel, integrated AI inference, and intelligent system management">
+    <meta name="keywords" content="AI, operating system, microkernel, artificial intelligence, linux, XAI, machine learning">
+    <meta name="author" content="XOLERIC Team">
+    <meta property="og:title" content="XOLERIC AI OS">
+    <meta property="og:description" content="AI-Native Operating System with Custom Microkernel">
+    <meta property="og:type" content="website">
+    <style>
+        :root {
+            --primary: #00d4aa;
+            --secondary: #0a0a0f;
+            --accent: #ff6b35;
+            --text: #e0e0e0;
+            --text-muted: #888;
+            --card-bg: #12121a;
+            --border: #2a2a3a;
+            --gradient: linear-gradient(135deg, #00d4aa 0%, #0891b2 100%);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: var(--secondary);
+            color: var(--text);
+            line-height: 1.7;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        
+        /* Header */
+        header {
+            background: rgba(10,10,15,0.95);
+            border-bottom: 1px solid var(--border);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 2px;
+        }
+        nav a {
+            color: var(--text);
+            text-decoration: none;
+            margin-left: 30px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        nav a:hover { color: var(--primary); }
+        
+        /* Hero */
+        .hero {
+            padding: 100px 0;
+            text-align: center;
+            background: radial-gradient(ellipse at top, #1a1a2e 0%, var(--secondary) 70%);
+        }
+        .hero h1 {
+            font-size: 64px;
+            margin-bottom: 20px;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero .tagline {
+            font-size: 24px;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+        }
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+        .btn {
+            padding: 15px 40px;
+            border-radius: 8px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        .btn-primary {
+            background: var(--gradient);
+            color: #000;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0,212,170,0.3);
+        }
+        .btn-secondary {
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+        .btn-secondary:hover {
+            background: rgba(0,212,170,0.1);
+        }
+        
+        /* Features */
+        .section { padding: 80px 0; }
+        .section-title {
+            text-align: center;
+            font-size: 42px;
+            margin-bottom: 60px;
+        }
+        .section-title span { color: var(--primary); }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .feature-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 30px;
+            transition: all 0.3s;
+        }
+        .feature-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-5px);
+        }
+        .feature-icon {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+        .feature-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        .feature-card p {
+            color: var(--text-muted);
+        }
+        
+        /* Architecture */
+        .arch-diagram {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 40px;
+            margin: 40px 0;
+            border: 1px solid var(--border);
+            overflow-x: auto;
+        }
+        .arch-layer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+        .layer-xde { background: #ff6b35; color: #000; }
+        .layer-xsh { background: #f59e0b; color: #000; }
+        .layer-xpkg { background: #10b981; color: #000; }
+        .layer-xinit { background: #3b82f6; color: #fff; }
+        .layer-xai { background: #8b5cf6; color: #fff; }
+        .layer-kernel { background: #00d4aa; color: #000; }
+        
+        /* Performance */
+        .perf-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .perf-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+        }
+        .perf-value {
+            font-size: 48px;
+            font-weight: bold;
+            color: var(--primary);
+        }
+        .perf-label {
+            color: var(--text-muted);
+            margin-top: 10px;
+        }
+        
+        /* Download */
+        .download-section {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 50px;
+            text-align: center;
+            margin: 40px 0;
+        }
+        .download-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+        
+        /* Code block */
+        pre {
+            background: #0d0d12;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 20px;
+            overflow-x: auto;
+            font-size: 14px;
+        }
+        code {
+            color: var(--primary);
+        }
+        .bash { color: #10b981; }
+        
+        /* Table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+        }
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        th { color: var(--primary); }
+        
+        /* Footer */
+        footer {
+            background: #0a0a0f;
+            border-top: 1px solid var(--border);
+            padding: 40px 0;
+            text-align: center;
+            color: var(--text-muted);
+        }
+        footer a { color: var(--primary); }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 36px; }
+            .hero .tagline { font-size: 18px; }
+            .hero-buttons { flex-direction: column; }
+            .section-title { font-size: 28px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo">XOLERIC</div>
+            <nav>
+                <a href="#features">Features</a>
+                <a href="#architecture">Architecture</a>
+                <a href="#performance">Performance</a>
+                <a href="#download">Download</a>
+                <a href="#docs">Documentation</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>XOLERIC AI OS</h1>
+            <p class="tagline">The World's First AI-Native Operating System with Custom Microkernel</p>
+            <div class="hero-buttons">
+                <a href="#download" class="btn btn-primary">Download v1.0.0</a>
+                <a href="#architecture" class="btn btn-secondary">Explore Architecture</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="section">
+        <div class="container">
+            <h2 class="section-title">Why <span>XOLERIC</span>?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🧠</div>
+                    <h3>Integrated AI Core</h3>
+                    <p>XAI daemon runs natively in the OS, providing instant AI responses without external dependencies. Optimized for CPU inference with 8.9x speedup.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Custom Rust Microkernel</h3>
+                    <p>Minimal 27KB kernel written in Rust with no_std architecture. Designed for security, speed, and modern memory safety.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📦</div>
+                    <h3>Native Package Manager</h3>
+                    <p>xpkg - custom package manager with AI-assisted dependency resolution. Simple .xpkg format with built-in conflict detection.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3>Smart Init System</h3>
+                    <p>xinit - lightweight init daemon with self-healing capabilities. Parallel service startup with AI-powered boot prediction.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>AI-Enhanced Security</h3>
+                    <p>Kernel modules with AI anomaly detection. XSHIELD monitors system calls, XNET analyzes network traffic for threats.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Intelligent Scheduler</h3>
+                    <p>XSCHED uses AI to predict optimal process scheduling. Considers CPU affinity, cache locality, and workload patterns.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="architecture" class="section">
+        <div class="container">
+            <h2 class="section-title">System <span>Architecture</span></h2>
+            <p style="text-align:center;color:var(--text-muted);margin-bottom:40px;">XOLERIC follows a layered AI-native architecture with each layer integrated with intelligent capabilities</p>
+            
+            <div class="arch-diagram">
+                <div class="arch-layer layer-xde">XDE - XOLERIC Desktop Environment (Qt/QML)</div>
+                <div class="arch-layer layer-xsh">XSH - AI-Enhanced Shell with Natural Language Commands</div>
+                <div class="arch-layer layer-xpkg">XPKG - Smart Package Manager</div>
+                <div class="arch-layer layer-xinit">XINIT - Intelligent Init System</div>
+                <div class="arch-layer layer-xai">XAI - Integrated AI Inference Engine</div>
+                <div class="arch-layer layer-kernel">XOLERIC Microkernel (Rust, 27KB)</div>
+            </div>
+
+            <h3 style="margin:40px 0 20px;color:var(--primary);">Core Components</h3>
+            <table>
+                <tr>
+                    <th>Component</th>
+                    <th>Technology</th>
+                    <th>Size</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>XOLERIC Kernel</td>
+                    <td>Rust (no_std)</td>
+                    <td>27KB</td>
+                    <td>Custom microkernel with memory management, scheduler, syscalls</td>
+                </tr>
+                <tr>
+                    <td>xinit</td>
+                    <td>C++20</td>
+                    <td>60KB</td>
+                    <td>Init daemon with parallel startup and self-healing</td>
+                </tr>
+                <tr>
+                    <td>xpkg</td>
+                    <td>C++20</td>
+                    <td>142KB</td>
+                    <td>Package manager with dependency resolution</td>
+                </tr>
+                <tr>
+                    <td>XAI Engine</td>
+                    <td>Python + Ollama</td>
+                    <td>~4GB</td>
+                    <td>Native AI inference (tinyllama, phi, llama3.2)</td>
+                </tr>
+                <tr>
+                    <td>XSCHED</td>
+                    <td>Rust</td>
+                    <td>Kernel</td>
+                    <td>AI-aware CPU scheduler with predictive loading</td>
+                </tr>
+                <tr>
+                    <td>XSHIELD</td>
+                    <td>C (Linux Kernel Module)</td>
+                    <td>~50KB</td>
+                    <td>Security monitor with anomaly detection</td>
+                </tr>
+            </table>
+        </div>
+    </section>
+
+    <section id="performance" class="section">
+        <div class="container">
+            <h2 class="section-title">AI <span>Performance</span></h2>
+            <p style="text-align:center;color:var(--text-muted);margin-bottom:40px;">Benchmark results showing XOLERIC's optimized AI inference</p>
+            
+            <div class="perf-grid">
+                <div class="perf-card">
+                    <div class="perf-value">3s</div>
+                    <div class="perf-label">tinyllama Response Time</div>
+                </div>
+                <div class="perf-card">
+                    <div class="perf-value">8.9x</div>
+                    <div class="perf-label">Speedup vs Cold Start</div>
+                </div>
+                <div class="perf-card">
+                    <div class="perf-value">30m</div>
+                    <div class="perf-label">Model Keep-Alive</div>
+                </div>
+                <div class="perf-card">
+                    <div class="perf-value">4</div>
+                    <div class="perf-label">Pre-installed Models</div>
+                </div>
+            </div>
+
+            <h3 style="margin:50px 0 20px;color:var(--primary);">Model Comparison</h3>
+            <table>
+                <tr>
+                    <th>Model</th>
+                    <th>Size</th>
+                    <th>Response Time</th>
+                    <th>Use Case</th>
+                </tr>
+                <tr>
+                    <td>tinyllama</td>
+                    <td>637 MB</td>
+                    <td>~3 seconds</td>
+                    <td>Fast queries, simple tasks ⭐</td>
+                </tr>
+                <tr>
+                    <td>phi</td>
+                    <td>1.6 GB</td>
+                    <td>~9 seconds</td>
+                    <td>General purpose</td>
+                </tr>
+                <tr>
+                    <td>xai-fast</td>
+                    <td>2.0 GB</td>
+                    <td>~21 seconds</td>
+                    <td>Optimized 3B variant</td>
+                </tr>
+                <tr>
+                    <td>llama3.2:3b</td>
+                    <td>2.0 GB</td>
+                    <td>~187 seconds (cold)</td>
+                    <td>Complex reasoning</td>
+                </tr>
+            </table>
+        </div>
+    </section>
+
+    <section id="download" class="section">
+        <div class="container">
+            <h2 class="section-title">Download <span>XOLERIC</span></h2>
+            
+            <div class="download-section">
+                <h3 style="font-size:28px;margin-bottom:10px;">XOLERIC v1.0.0 PC Installation ISO</h3>
+                <p style="color:var(--text-muted);margin-bottom:20px;">Full installation image with Linux kernel + XOLERIC components</p>
+                <div style="font-size:14px;margin-bottom:30px;">
+                    <span style="color:var(--primary);">Size:</span> 48MB | 
+                    <span style="color:var(--primary);">Format:</span> ISO |
+                    <span style="color:var(--primary);">Platform:</span> x86_64
+                </div>
+                <div class="download-buttons">
+                    <a href="xoleric-pc-v1.0.0.iso" class="btn btn-primary">Download ISO</a>
+                    <a href="xoleric-pc-v1.0.0.iso.sha256" class="btn btn-secondary">SHA256</a>
+                </div>
+            </div>
+
+            <div class="download-section" style="margin-top:30px;">
+                <h3 style="font-size:24px;margin-bottom:10px;">Microkernel Only (Experimental)</h3>
+                <p style="color:var(--text-muted);margin-bottom:20px;">Pure Rust microkernel for advanced users and testing</p>
+                <div class="download-buttons">
+                    <a href="xoleric-microkernel.iso" class="btn btn-secondary">Microkernel ISO</a>
+                    <a href="xoleric-kernel.bin" class="btn btn-secondary">Kernel Binary</a>
+                    <a href="xoleric-v1.0.0.tar.gz" class="btn btn-secondary">Source Archive</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="docs" class="section">
+        <div class="container">
+            <h2 class="section-title">Documentation</h2>
+            
+            <h3 style="color:var(--primary);margin:30px 0 20px;">Quick Start Guide</h3>
+            <pre><code class="bash"># Write to USB
+sudo dd if=xoleric-pc-v1.0.0.iso of=/dev/sdX bs=4M
+
+# Boot from USB
+# Select XOLERIC from GRUB menu
+
+# After installation, access AI:
+curl -X POST http://localhost:11434/api/chat \
+  -d '{"model":"tinyllama","messages":[{"role":"user","content":"Hello!"}]}'</code></pre>
+
+            <h3 style="color:var(--primary);margin:40px 0 20px;">System Requirements</h3>
+            <table>
+                <tr>
+                    <th>Component</th>
+                    <th>Minimum</th>
+                    <th>Recommended</th>
+                </tr>
+                <tr>
+                    <td>CPU</td>
+                    <td>x86_64 2 cores</td>
+                    <td>x86_64 4+ cores</td>
+                </tr>
+                <tr>
+                    <td>RAM</td>
+                    <td>2 GB</td>
+                    <td>4+ GB</td>
+                </tr>
+                <tr>
+                    <td>Disk</td>
+                    <td>10 GB</td>
+                    <td>20+ GB</td>
+                </tr>
+                <tr>
+                    <td>GPU (Optional)</td>
+                    <td>None</td>
+                    <td>AMD Radeon (ROCm)</td>
+                </tr>
+            </table>
+
+            <h3 style="color:var(--primary);margin:40px 0 20px;">AI Commands</h3>
+            <pre><code class="bash"># Using XAI via CLI
+xai "your question here"
+
+# Via REST API
+curl http://localhost:11434/api/tags  # List models
+curl -X POST http://localhost:11434/api/generate \
+  -d '{"model":"tinyllama","prompt":"Explain quantum computing"}'</code></pre>
+
+            <h3 style="color:var(--primary);margin:40px 0 20px;">Package Management</h3>
+            <pre><code class="bash"># Install package
+xpkg install package_name.xpkg
+
+# Remove package  
+xpkg remove package_name
+
+# Search packages
+xpkg search keyword
+
+# Update all
+xpkg update</code></pre>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2024-2026 XOLERIC AI OS. Open Source Project.</p>
+            <p style="margin-top:10px;">
+                <a href="https://github.com/Xolericuz/xoleric">GitHub</a> | 
+                <a href="https://xolericuz.github.io/xoleric/">Documentation</a> |
+                <a href="mailto:xoleric@example.com">Contact</a>
+            </p>
+            <p style="margin-top:20px;font-size:12px;color:#666;">
+                Built with Rust, C++, Python, and ❤️ for the future of AI computing
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
