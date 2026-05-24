@@ -1,4 +1,4 @@
-a3ba190f57efc09961cf2146c359301704fb12ee4835f5114daa478a4a597dda  /home/x/.xoleric-release/website/xoleric-microkernel.iso
-2097d9e093c3ee8c485ac486c76427cf931c1ae71578db50bae10fe8c27fcd7c  /home/x/.xoleric-release/website/xoleric-pc-v1.0.0.iso
-258d136cd644f75817e9f3f81d219464c2978581f29e3912c7240da0a3daec19  /home/x/.xoleric-release/website/xoleric-v1.0.0.tar.gz
-eba2b392174fedc9ec6b3bdeee74ce5591f8829fa083bb663e6b5d53f4d1e41b  /home/x/.xoleric-release/website/xoleric-kernel.bin
+a3ba190f57efc09961cf2146c359301704fb12ee4835f5114daa478a4a597dda  xoleric-microkernel.iso
+2097d9e093c3ee8c485ac486c76427cf931c1ae71578db50bae10fe8c27fcd7c  xoleric-pc-v1.0.0.iso
+258d136cd644f75817e9f3f81d219464c2978581f29e3912c7240da0a3daec19  xoleric-v1.0.0.tar.gz
+eba2b392174fedc9ec6b3bdeee74ce5591f8829fa083bb663e6b5d53f4d1e41b  xoleric-kernel.bin

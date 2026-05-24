@@ -28,7 +28,6 @@ xai-fast "your question"
 
 ## Build from Source
 ```bash
-cd kernel
-cargo build --target x86_64-unknown-none -Z build-std=core,alloc --release
-bash link-kernel.sh
+# Source code not included in this release
+# Build instructions coming soon
 ```

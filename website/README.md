@@ -35,7 +35,7 @@ curl http://localhost:11434/api/chat -d '{"model":"tinyllama","messages":[{"role
 
 ## Documentation
 
-See [docs.xoleric.ai](https://xolericuz.github.io/xoleric/) for full documentation.
+See [docs.xoleric.ai](https://xolerc.github.io/xoleric/) for full documentation.
 
 ## License
 
@@ -43,5 +43,5 @@ MIT License
 
 ## Support
 
-- GitHub Issues: https://github.com/Xolericuz/xoleric/issues
-- Documentation: https://xolericuz.github.io/xoleric/
+- GitHub Issues: https://github.com/xolerc/xoleric/issues
+- Documentation: https://xolerc.github.io/xoleric/
